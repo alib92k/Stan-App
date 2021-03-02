@@ -11,7 +11,7 @@ it('Should load stan.com.au/watch', () => {
     cy.get(':nth-child(1) > .form__input')
     .type("thomas.jackson95@outlook.com")
 
-    // Press forgot password button
+    // Press forgot password button and emails user password reset link
     cy.get(':nth-child(2) > .form__input')
       .get('.-margin > .link')
     .click()
@@ -36,7 +36,7 @@ it('Should load stan.com.au/watch', () => {
     cy.get(':nth-child(1) > .form__input')
     .type("thomas.jackson95@outlook.com")
 
-    // Check password length
+    // Check password length, if less than 6 should throw an error
     cy.get(':nth-child(2) > .form__input')
     .type("P1234")
     .get('.button')
